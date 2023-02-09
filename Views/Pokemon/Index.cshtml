@@ -1,0 +1,56 @@
+@model PokeAPI.Models.Pokemon
+
+@{
+    ViewData["Title"] = "Pokémon";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Informações do Pokémon</h1>
+</div>
+
+@using (Html.BeginForm("GetPokemonByName", "PokemonController", FormMethod.Get))
+{
+    <input type=text name="PokemonName">
+
+    <button type="submit" name="Search Pokemon" id="SearchPokemon">Search Pokémon</button>
+}
+
+<div>
+    <dl class = "row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(x => x.Id);
+        </dt>
+
+        <dt class = "col-sm-10">
+            @Html.DisplayFor(x => x.Id);
+        </dt>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(x => x.Name);
+        </dt>
+
+        <dt class = "col-sm-10">
+            @Html.DisplayFor(x => x.Name);
+        </dt>
+
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(x => x.Weight);
+        </dt>
+
+        <dt class = "col-sm-10">
+            @Html.DisplayFor(x => x.Weight);
+        </dt>
+
+        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(x => x.Height);
+        </dt>
+
+        <dt class = "col-sm-10">
+            @Html.DisplayFor(x => x.Height);
+        </dt>
+    </dl>
+</div>
+
+<hr/>
+<br>
